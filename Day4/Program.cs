@@ -5,7 +5,7 @@ IEnumerable<(string, string)> input = File.ReadLines("./input.txt").Select(x =>
     return (parts[0], parts[1]);
 });
 
-int fullOverlapCount = 0;
+int subsetCount = 0;
 foreach((string, string) line in input)
 {
     List<int> parts1 = line.Item1
@@ -24,10 +24,10 @@ foreach((string, string) line in input)
 
     if (overlap.SetEquals(range1) || overlap.SetEquals(range2))
     {
-        fullOverlapCount++;
+        subsetCount++;
     }
 }
-Console.WriteLine(fullOverlapCount);
+Console.WriteLine(subsetCount);
 
 // Part 2
 int overlapCount = 0;
